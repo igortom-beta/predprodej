@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojzovy Paseky - Moderní ubytování v přírodě</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-200 leading-relaxed">
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="./images/hero-bungalow-exterior.jpg" alt="Lojzovy Paseky" class="w-full h-full object-cover opacity-40 scale-105 animate-pulse" style="animation-duration: 10s">
+            <div class="absolute inset-0 bg-gradient-to-b from-stone-950/20 via-transparent to-stone-950"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <span class="text-green-500 font-semibold tracking-[0.3em] uppercase text-sm mb-4 block">Váš druhý domov</span>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 text-white">Lojzovy Paseky</h1>
+            <p class="text-xl md:text-2xl font-light text-stone-300 max-w-2xl mx-auto">
+                Kde se moderní architektura potkává s tichem šumavských lesů. Investice do klidu, který trvá.
+            </p>
+        </div>
+    </header>
+
+    <!-- Kvalitní texty o modernosti a přírodě -->
+    <main class="max-w-6xl mx-auto px-6 py-24 space-y-32">
+        
+        <!-- Sekce: Architektura a Modernost -->
+        <section class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold text-white">Moderní komfort bez kompromisů</h2>
+                <p class="text-lg text-stone-400">
+                    Naše bungalovy nejsou jen místem k přespání. Jsou výsledkem precizního designu, který klade důraz na **vzdušnost, světlo a technologickou vyspělost**. Každý detail byl navržen tak, aby vám poskytl maximální pohodlí moderní doby v prostředí, kde lišky dávají dobrou noc.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-500 mt-1">✦</span>
+                        <span>**Chytré technologie:** Intuitivní ovládání vytápění a osvětlení pro váš dokonalý tepelný komfort.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-500 mt-1">✦</span>
+                        <span>**Prémiové materiály:** Kombinace přírodního dřeva, kamene a velkoformátového prosklení.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-500 mt-1">✦</span>
+                        <span>**Udržitelnost:** Energeticky úsporné řešení, které respektuje okolní ekosystém.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-2xl shadow-green-900/20">
+                <img src="./images/bungalow-deluxe-interior.jpg" alt="Interiér" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+        </section>
+
+        <!-- Sekce: Spojení s přírodou -->
+        <section class="grid md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
+            <div class="md:order-2 space-y-6">
+                <h2 class="text-4xl font-bold text-white">Dialog s krajinou</h2>
+                <p class="text-lg text-stone-400">
+                    V Lojzových Pasekách nekončí váš obývací pokoj zdí. Díky **panoramatickým oknům** se okolní příroda stává součástí interiéru. Ranní káva s výhledem na mlhu nad Lipnem nebo večerní pozorování hvězd přímo z terasy – to je luxus, který se nedá koupit, ale dá se prožít.
+                </p>
+                <p class="text-stone-400">
+                    Využili jsme přirozený sklon terénu a orientaci ke světovým stranám, aby každý bungalov nabízel soukromí a zároveň neomezený kontakt s divočinou.
+                </p>
+            </div>
+            <div class="md:order-1 rounded-3xl overflow-hidden shadow-2xl shadow-green-900/20">
+                <img src="./images/sustainable-living.jpg" alt="Příroda" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- AI Rezervační systém (Osvědčená logika) -->
+    <div id="ai-chat-root"></div>
+
+    <footer class="py-12 border-t border-stone-800 text-center text-stone-500 text-sm">
+        <p>© 2026 Lojzovy Paseky. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <!-- React & AI Logic -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const AIReservation = () => {
+            const [messages, setMessages] = React.useState([{ id: 1, text: 'Dobrý den! 👋 Jsem asistent pro Lojzovy Paseky. Jak vám mohu pomoci s vaší rezervací?', sender: 'ai' }]);
+            const [input, setInput] = React.useState('');
+            const [reservation, setReservation] = React.useState({ nights: null, guests: null });
+            const [isOpen, setIsOpen] = React.useState(true);
+
+            const sanitize = (str) => {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            };
+
+            const handleSend = (e) => {
+                e.preventDefault();
+                if (!input.trim()) return;
+                
+                const cleanInput = sanitize(input.trim());
+                setMessages(prev => [...prev, { id: Date.now(), text: cleanInput, sender: 'user' }]);
+                
+                setTimeout(() => {
+                    let reply = "";
+                    
+                    const nightsMatch = cleanInput.match(/(\d+)\s*(noc|noci|nocí|dní|dny|den)/i);
+                    const guestsMatch = cleanInput.match(/(\d+)\s*(osob|lidi|člověk|osoby|host|hostů)/i);
+                    
+                    let detectedGuests = guestsMatch ? parseInt(guestsMatch[1]) : null;
+                    if (!detectedGuests) {
+                        if (cleanInput.match(/ve dvou|pro dva|pár/i)) detectedGuests = 2;
+                        if (cleanInput.match(/sám|pro jednoho/i)) detectedGuests = 1;
+                    }
+
+                    let detectedNights = nightsMatch ? parseInt(nightsMatch[1]) : null;
+                    if (!detectedNights && cleanInput.match(/týden|na týden/i)) detectedNights = 7;
+                    if (!detectedNights && cleanInput.match(/víkend/i)) detectedNights = 2;
+
+                    const newReservation = {
+                        nights: detectedNights || reservation.nights,
+                        guests: detectedGuests || reservation.guests
+                    };
+                    setReservation(newReservation);
+
+                    if (newReservation.nights && newReservation.guests) {
+                        reply = `Perfektní! Mám vše: pobyt na **${newReservation.nights} nocí** pro **${newReservation.guests} osob**. Mám prověřit volné apartmány pro tento počet?`;
+                    } else if (newReservation.nights && !newReservation.guests) {
+                        reply = `Rozumím, pobyt na ${newReservation.nights} nocí. Pro kolik osob by to mělo být?`;
+                    } else if (!newReservation.nights && newReservation.guests) {
+                        reply = `Dobře, počítám s ${newReservation.guests} osobami. Na jak dlouho (kolik nocí) plánujete přijet?`;
+                    } else if (cleanInput.toLowerCase().includes('cena') || cleanInput.toLowerCase().includes('kolik stojí')) {
+                        reply = "Ceny začínají od 2 500 Kč za noc (Apartmán 3+kk) nebo 3 800 Kč (Apartmán 4+kk). Pro přesnou kalkulaci mi prosím napište počet osob a nocí.";
+                    } else {
+                        reply = "Rád vám pomohu s rezervací. Stačí mi napsat, pro kolik osob a na jak dlouho hledáte ubytování.";
+                    }
+
+                    setMessages(prev => [...prev, { id: Date.now() + 1, text: reply, sender: 'ai' }]);
+                }, 600);
+                setInput('');
+            };
+
+            if (!isOpen) return (
+                <button onClick={() => setIsOpen(true)} style={{position:'fixed', bottom:'20px', right:'20px', background:'#16a34a', color:'white', padding:'15px 25px', borderRadius:'50px', fontWeight:'bold', boxShadow:'0 10px 25px rgba(0,0,0,0.3)', zIndex:1000}}>
+                    Rezervovat pobyt 💬
+                </button>
+            );
+
+            return (
+                <div style={{position:'fixed', bottom:'20px', right:'20px', width:'350px', height:'500px', background:'#1c1917', border:'1px solid #444', borderRadius:'24px', display:'flex', flexDirection:'column', boxShadow:'0 20px 50px rgba(0,0,0,0.5)', zIndex:1000, overflow:'hidden'}}>
+                    <div style={{background:'#16a34a', color:'white', padding:'15px 20px', display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                        <span style={{fontWeight:'bold'}}>Lojzovy Paseky AI</span>
+                        <button onClick={() => setIsOpen(false)} style={{opacity:0.7}}>✕</button>
+                    </div>
+                    <div style={{flex:1, overflowY:'auto', padding:'20px', display:'flex', flexDirection:'column', gap:'15px'}}>
+                        {messages.map(m => (
+                            <div key={m.id} style={{
+                                alignSelf: m.sender==='user'?'flex-end':'flex-start', 
+                                background:m.sender==='user'?'#16a34a':'#292524', 
+                                color:'white', 
+                                padding:'12px 16px', 
+                                borderRadius:'18px', 
+                                borderBottomRightRadius: m.sender==='user'?'4px':'18px',
+                                borderBottomLeftRadius: m.sender==='user'?'18px':'4px',
+                                fontSize:'14px', 
+                                maxWidth:'85%',
+                                boxShadow:'0 2px 5px rgba(0,0,0,0.1)'
+                            }} dangerouslySetInnerHTML={{__html: m.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}}></div>
+                        ))}
+                    </div>
+                    <form onSubmit={handleSend} style={{padding:'15px', background:'#292524', borderTop:'1px solid #444'}}>
+                        <input 
+                            style={{width:'100%', background:'#1c1917', border:'1px solid #444', borderRadius:'12px', padding:'10px 15px', color:'white', outline:'none'}} 
+                            value={input} 
+                            onChange={e => setInput(e.target.value)} 
+                            placeholder="Napište nám..." 
+                        />
+                    </form>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('ai-chat-root'));
+        root.render(<AIReservation />);
+    </script>
+</body>
+</html>
