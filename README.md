@@ -1,0 +1,2 @@
+# predprodej
+longterm new visioin
